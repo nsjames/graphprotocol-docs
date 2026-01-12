@@ -35,6 +35,7 @@ import {
   APIToken,
   BookOpenText,
   Files,
+  Horizon,
   House,
   Hypergraph,
   MagnifyingGlass,
@@ -48,7 +49,6 @@ import {
   Stack,
   Subgraph,
   Substreams,
-  SubstreamsPoweredSubgraph,
   TheGraph,
   Translate,
 } from '@edgeandnode/gds/icons'
@@ -56,6 +56,7 @@ import {
 import {
   Callout,
   CodeBlock,
+  CodeBlockTabs,
   DocSearch,
   Heading,
   Image,
@@ -194,9 +195,6 @@ export default function Layout({ pageOpts, children }: NextraThemeLayoutProps<Fr
         if (routeWithoutLocale === '/substreams' || routeWithoutLocale.startsWith('/substreams/')) {
           return <Substreams alt="" />
         }
-        if (routeWithoutLocale === '/sps' || routeWithoutLocale.startsWith('/sps/')) {
-          return <SubstreamsPoweredSubgraph alt="" />
-        }
         if (routeWithoutLocale === '/token-api' || routeWithoutLocale.startsWith('/token-api/')) {
           return <APIToken alt="" />
         }
@@ -208,6 +206,9 @@ export default function Layout({ pageOpts, children }: NextraThemeLayoutProps<Fr
         }
         if (routeWithoutLocale === '/indexing' || routeWithoutLocale.startsWith('/indexing/')) {
           return <RoleIndexer alt="" />
+        }
+        if (routeWithoutLocale === '/graph-horizon' || routeWithoutLocale.startsWith('/graph-horizon/')) {
+          return <Horizon alt="" />
         }
         if (
           routeWithoutLocale === '/resources' ||
@@ -610,6 +611,8 @@ export default function Layout({ pageOpts, children }: NextraThemeLayoutProps<Fr
                 img: ImageWrapper,
                 // TODO: Fix "[Shiki] X instances have been created. Shiki is supposed to be used as a singleton" warnings
                 pre: CodeBlock,
+                CodeBlock,
+                CodeBlockTabs,
                 // TODO: Build and use `ExperimentalTable`
                 table: Table,
                 VideoEmbed,
